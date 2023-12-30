@@ -8,6 +8,4 @@ import App from './App.jsx'
 // import './path-ke-css-file'
 
 // Bikin elemen untuk di-render ke #root
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)

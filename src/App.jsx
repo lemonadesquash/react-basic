@@ -1,4 +1,5 @@
-import Counter from "./Counter";
+// import Counter from "./Counter";
+import Calculator from './Calculator'
 
 // Component (Function yang me-return JSX)
 //
@@ -6,13 +7,14 @@ import Counter from "./Counter";
 // 1. Nama function harus PascalCase
 // 2. Kita pakai JSX karena ada beberapa reserved words seperti class dan for, di JSX bisa pakai className dan htmlFor
 function App() {
-  return (
-    <div>
-      <h1>Pets</h1>
+    return (
+        <div>
+            {/* <h1>Pets</h1>
       <p>Welcome to pets app</p>
-      <Counter />
-    </div>
-  );
+      <Counter /> */}
+            <Calculator />
+        </div>
+    )
 }
 
-export default App;
+export default App
