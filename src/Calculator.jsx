@@ -1,40 +1,31 @@
-import { useState } from 'react'
-
-// Concatenation
+import { useState } from "react";
 
 function Calculator() {
-    const [number, setNumber] = useState('')
+  const [number, setNumber] = useState("0");
 
-    const assignNumber = numberToAssign => {
-        setNumber(numberToAssign)
+  const assignToNumber = (numberToAssign) => {
+    if (number === "0") {
+      setNumber(numberToAssign);
+    } else {
+      let result = number.concat(numberToAssign);
+      setNumber(result);
     }
+  };
 
-    return (
-        <div>
-            <h1>Calculator</h1>
-            <p>Number: {number}</p>
-            {/* 
-                onClick itu menerima function DECLARATION bukan INVOCATION
+  const resetNumber = () => {
+    setNumber("0");
+  };
 
-                Contoh Declaration (Deklarasi function):
-                function() {}
-                () => {}
-                function reset() {}
-
-                Contoh Invocation (Memanggil function):
-                reset()
-             */}
-            <button onClick={() => assignNumber(1)}>1</button>
-            <button onClick={() => assignNumber(2)}>2</button>
-            <button onClick={() => assignNumber(3)}>3</button>
-            <button onClick={() => assignNumber(4)}>4</button>
-            <button onClick={() => assignNumber(5)}>5</button>
-            <button onClick={() => assignNumber(6)}>6</button>
-            <button onClick={() => assignNumber(7)}>7</button>
-            <button onClick={() => assignNumber(8)}>8</button>
-            <button onClick={() => assignNumber(9)}>9</button>
-        </div>
-    )
+  return (
+    <div>
+      <p>Number: {number}</p>
+      <button onClick={() => assignToNumber("1")}>1</button>
+      <button onClick={() => assignToNumber("2")}>2</button>
+      <button onClick={() => assignToNumber("3")}>3</button>
+      <button onClick={() => assignToNumber("0")}>0</button>
+      <button onClick={resetNumber}>AC</button>
+    </div>
+  );
 }
 
-export default Calculator
+export default Calculator;
